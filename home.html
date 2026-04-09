@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aurele Catalog</title>
+        <style>
+            body{
+                font-family: Arial, sans-serif;
+                max-width: 600px;
+                margin: 50px auto;
+                background-color: #fff9f5;
+                color: #333;
+            }
+            h1 {
+                color: #c9c96c;
+                text-align: center;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            li{
+                padding: 12px;
+                margin: 8px 0;
+                background: white;
+                border-radius: 8px;
+                border: 1px solid #f0e0d0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Aurele Catalog</h1>
+        <ul>
+            {% for product in products %}
+            <li>{{ product }}
+                <form action="/remove" method="post" style="display: inline;">
+                    <input type="hidden" name="product" value="{{ product }}">
+                    <button type="submit">Remove</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+        <form action="/add" method="post">
+            <input type="text" name="product" placeholder="Add a new product...">
+            <button type="submit"> Add</button>
+            </form>
+    </body>
+</html>
