@@ -7,7 +7,7 @@
                 font-family: Arial, sans-serif;
                 max-width: 600px;
                 margin: 50px auto;
-                background-color: #fff9f5;
+                background-color: #491002;
                 color: #333;
             }
             h1 {
@@ -29,10 +29,15 @@
     </head>
     <body>
         <h1>Aurele Catalog</h1>
+        <form action="/search" method="post">
+            <input type="text" name="query" placeholder="Search products...">
+            <button type="submit">Search</button>
+        </form>
         <ul>
             {% for product in products %}
-            <li>{{ product }}
-                <form action="/remove" method="post" style="display: inline;">
+            <li>
+                {{ product }}
+                <form action="/remove" method="post" style="display:inline">
                     <input type="hidden" name="product" value="{{ product }}">
                     <button type="submit">Remove</button>
                 </form>
@@ -41,7 +46,7 @@
         </ul>
         <form action="/add" method="post">
             <input type="text" name="product" placeholder="Add a new product...">
-            <button type="submit"> Add</button>
-            </form>
+            <button type="submit">Add</button>
+        </form>
     </body>
 </html>
