@@ -31,7 +31,15 @@ def remove():
    products.remove(product)
    with open("catalog.json", "w") as file:
       json.dump(products, file)
-      return redirect("/")
+   return redirect("/")
+   
+@app.route("/search", methods=["POST"])
+def search():
+   query = request.form["query"]
+   products = load_products()
+   results = [p for p in products if query.lower() in p.lower()]
+   return render_template("home.html", products = results)
+
 
 if __name__== "__main__":
    app.run(debug=True)    
