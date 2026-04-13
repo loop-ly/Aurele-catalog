@@ -190,27 +190,15 @@
             <a href="/contact">Contact</a>
         </nav>
         <div class="container">
-            <form action="/search" method="post" class="search-bar">
-                <input type="text" name="query" placeholder="Search products...">
-                <button type="submit">Search</button>
-            </form>
-            <div class="section-label">Collection</div>
-            <p class="product-count">{{products|length}} products in collection</p>
-            <ul>
-                {% for product in products %}
-                <li>
-                    <span>{{ product }}</span>
-                    <form action="/remove" method="post" style="display:inline">
-                        <input type="hidden" name="product" value="{{ product }}">
-                        <button type="submit">Remove</button>
-                    </form>
-                </li>
-                {% endfor %}
-            </ul>
-            <form action="/add" method="post" class="add-form">
-                <input type="text" name="product" placeholder="Add a new product...">
-                <button type="submit">Add</button>
-            </form>
+            <div class="sectio-label">Our Story</div>
+            <p class="about-text">
+                 Aurèle was born from a love of modest fashion and aesthetic living. 
+                 We believe that elegance and modesty go hand in hand — 
+                 that dressing with intention is a form of self expression. 
+                 Every piece in our collection is curated with care, 
+                 for women who value beauty, simplicity, and grace.
+            </p>
+                
         </div>
         <footer>© 2026 Aurèle · All Rights Reserved</footer>
     </body>

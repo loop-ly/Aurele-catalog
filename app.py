@@ -13,7 +13,14 @@ def load_products():
 def home():
     products = load_products()
     return render_template("home.html", products=products)
-from flask import Flask, render_template, request, redirect
+
+@app.route("/about")
+def about():
+   return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+   return render_template("contact.html")
 
 @app.route("/add", methods =["POST"])
 def add():

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Aurèle</title>
+        <title>Aurèle . Contact</title>
         <style>
             * {
                 margin: 0;
@@ -190,27 +190,14 @@
             <a href="/contact">Contact</a>
         </nav>
         <div class="container">
-            <form action="/search" method="post" class="search-bar">
-                <input type="text" name="query" placeholder="Search products...">
-                <button type="submit">Search</button>
-            </form>
-            <div class="section-label">Collection</div>
-            <p class="product-count">{{products|length}} products in collection</p>
-            <ul>
-                {% for product in products %}
-                <li>
-                    <span>{{ product }}</span>
-                    <form action="/remove" method="post" style="display:inline">
-                        <input type="hidden" name="product" value="{{ product }}">
-                        <button type="submit">Remove</button>
-                    </form>
-                </li>
-                {% endfor %}
-            </ul>
-            <form action="/add" method="post" class="add-form">
-                <input type="text" name="product" placeholder="Add a new product...">
-                <button type="submit">Add</button>
-            </form>
+            <div class="section-label">Contact Us!</div>
+            <p class="äbout-text">
+                For collaborations, inquiries or just to say hello — reach out below.
+            </p>
+            <br>
+            <p class="about-text">📍 Gujranwala, Pakistan</p>
+            <p class="about-text">📧 ibtiahlbutt100@gmail.com</p>
+            <p class="about-text">📌 pinterest.com/aureleofficial</p>
         </div>
         <footer>© 2026 Aurèle · All Rights Reserved</footer>
     </body>
